@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" href="../css/goodshopcar.css">
+	<link rel="stylesheet" href="../css/commonYingtai.css">
+	<link rel="stylesheet" href="font/iconfont.css">
+	<style>
+		/*ul{padding:0;margin:0;list-style: none;}
+		#carList li{position:relative;padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #ddd;}
+		#carList img{display:block;width:100px;}
+		#carList li .btn-close{position:absolute;top:0;right:0;padding:0 5px;cursor:default;}
+		#carList li .btn-close:hover{background-color:#f00;color:#fff;}
+		.subPrice{padding:5px 20px;color:#f00;font-weight:bold;text-align:right;}
+		#carList .price{color:#f00;}
+		.price::before{
+			content:'￥';
+			font-size:11px;
+		}
+		#carList .price span{font-size:11px;}*/
+
+
+	</style>
+	<script src="../js/common.js"></script>
+	<script src="../lib/jquery-3.1.1.js"></script>
+	<script>
+		window.onload = function(){
+			/*
+				1）获取cookie
+				2）把cookie中的商品信息写入#carList
+				3）计算总价
+				4）清空购物车
+					清除cookie
+			 */
+			var carList = document.getElementById('carList');
+			var btnClear = document.getElementById('btnClear');
+			var subPrice = document.getElementsByClassName('subPrice')[0];
+
+			// 1）获取cookie
+			var goodslist = getCookie('carlist');
+
+			// 把json字符串转换成js对象
+			goodslist = goodslist ? JSON.parse(goodslist) : [];
+
+			// 2）把cookie中的商品信息写入#carList
+			var ul = document.createElement('ul');
+			ul.className = 'hahha';
+
+			// 总价
+			//var totalPrice = 0;
+
+			ul.innerHTML = goodslist.map(function(item){
+				//totalPrice += Number(item.price * item.qty);
+
+				return '<li data-guid="'+item.guid+'" style="height:150px;overflow:hidden" ><input type="checkbox" style="display:inline-block;float:left;margin:65px 5px;" name="checkbox" class="checkbox"><img src="'+item.imgurl+'" style="display:inline-block;float:left"><span style="display:inline-block;float:left;text-align:center;width:400px;margin-top:50px;display:inline-block;">'+item.name+'</span><span class="price" style="line-height:150px;margin-left:20px;">'+item.price+'</span><button style="width:20px;height:20px;line-height:20px;margin-left:35px;" class="jianhao">-</button><input style="width:30px;margin-left:10px;text-align:center;" class="text_box" value='+item.qty+'></input><button  style="width:20px;height:20px;line-height:20px;margin-left:20px;" class="jiahao">+</button><span style="margin-left:50px;" class="subtotal">'+item.price * item.qty+'</span><span class="btn-close" style="margin:65px 30px;">删除商品&times;</span></li>';
+			}).join('');
+
+			// 把ul写入#carList
+			carList.appendChild(ul);
+
+			// 写入总价
+			//subPrice.innerHTML = totalPrice.toFixed(2);
+
+
+			// 清空购物车
+			btnClear.onclick = function(){
+				removeCookie('carlist');
+
+				// 刷新页面
+				location.reload();
+			}
+
+
+			// 删除单个商品
+			// 移除DOM节点
+			// 清除cookie中对应的商品信息
+			carList.onclick = function(e){
+				e = e || window.event;
+				var target = e.target || e.srcElement;
+
+				if(target.className === 'btn-close'){
+					var currentLi = target.parentNode;
+					var currentGUID = currentLi.getAttribute('data-guid');
+
+					// 移除DOM节点
+					currentLi.parentNode.removeChild(currentLi);
+
+					// 清除cookie中对应的商品信息
+					for(var i=0;i<goodslist.length;i++){
+						if(goodslist[i].guid === currentGUID){
+							goodslist.splice(i,1);
+							break;
+						}
+					}
+
+					// 删除后重写cookie
+					setCookie('carlist',JSON.stringify(goodslist));
+				}
+			}
+
+			
+		}
+		//数量增减操作
+	
+
+		$.each($('input[class*=text_box]'),function(i,t){
+				subtotal($(t));
+		})
+
+		$(function(){
+
+			$('#webHeader').load('header.html',function(){
+				var $myYt = $('.myYt');
+				var $myLo = $('.myLo');
+				var $yinTi = $('.yinTi');
+				$('.list').hide();
+				$('.list').on('mouseleave',function(){$('.list').hide();});
+
+				$('.fenlei').on('mouseenter',function(){$('.list').show()})
+				$('.fenlei').on('mouseleave',function(){$('.list').hide()})
+				$yinTi.on('mouseenter',function(){
+						$myYt.show();
+						$yinTi.css({'backgroundColor':'white','z-index':99});
+
+				})
+				$yinTi.on('mouseleave', function(){
+						$myYt.hide();
+						$yinTi.css({backgroundColor:'#D6D6D6'});				
+				})
+
+				$('.fenlei .list').on('mouseenter','>li',function(){
+					$(this).css({backgroundColor:'#FE044C'});
+					$(this).children('span').hide();
+					$(this).children('.juti').show(500);
+					$(this).siblings().children('.juti').hide();
+				})
+
+				$('.fenlei .list').on('mouseleave','>li',function(){
+					$(this).css({backgroundColor:'#333333'});
+					$(this).children('span').show();
+					$(this).children('.juti').hide();
+				})
+
+				$('#fix-right li').on('mouseenter','>a',function(){
+					$(this).css({backgroundColor:'#FE044C'});
+					$(this).children('i').hide();
+					$(this).children('p').show();
+				})
+
+				$('#fix-right li').on('mouseleave','>a',function(){
+					$(this).css({backgroundColor:'#ccc'});
+					$(this).children('p').hide();
+					$(this).children('i').show();
+				})
+
+				$(window).scroll(function() {
+					if($(window).scrollTop() >= $('#banner').height()){
+						$('#fix-right').css({'display':'block'});
+					}else{$('#fix-right').css({'display':'none'});}
+				})
+			});
+			$('#webFooter').load('footer.html');
+				$(".jiahao").click(function(){
+					var t=$(this).parent().find('input[class*=text_box]');
+					t.val(parseInt(t.val())+1);
+					if(isNaN(t.val())){
+						t.val(0);
+					}
+					subtotal(t)
+				});
+
+				$(".jianhao").click(function(){ 
+					var t=$(this).parent().find('input[class*=text_box]'); 
+					t.val(parseInt(t.val())-1);
+					if(parseInt(t.val())<=0 || isNaN(t.val())){ 
+						t.val(0);
+					}
+					subtotal(t);
+				});
+
+				$('input[class*=text_box]').keyup(function(){
+					var t=$(this);
+					t.val(parseInt(t.val()));
+					if (isNaN(t.val()) || parseInt(t.val()) <= 0) {
+				        t.val(0);
+				    }
+				    if (t.val(parseInt(t.val())) != t.val()) {
+				        t.val(parseInt(t.val()));
+				    }
+				    subtotal(t);
+				});
+
+				function subtotal(sum){
+					var subtotal=0;
+					subtotal=parseFloat(sum.siblings('.price').text())*parseInt(sum.val());
+					sum.siblings('.subtotal').html(subtotal.toFixed(2));
+					setTotal();
+				}
+				function setTotal(){
+					var s=0; 
+					$(".hahha li").each(function(){ 
+						s+=parseInt($(this).find('input[class*=text_box]').val())*parseFloat($(this).find('.price').text()); 
+						if($(this).find('input[class*=text_box]').val() > 0){$(this).children('.checkbox').attr("checked",true);}
+						else{$(this).children('.checkbox').attr("checked",false);
+						}
+					});
+					$(".subPrice").html(s.toFixed(2));
+				} 
+				setTotal();	
+
+				$('.quanxuan').on('click',function(){
+					if($(this).attr("checked",false)){
+						($('input[class*=checkbox]').attr("checked",true)) && ($('input[class*=text_box]').val(1)) && setTotal()														
+					}
+					
+				})				
+		})
+		
+	</script>
+
+</head>
+<body>
+	<div id="webHeader"></div>
+	<div id="carmid">
+		<div class="center">
+			<div><img src="../images/carshop1.png" alt=""></div>
+			<div class="car-top">
+
+				<input type="checkbox" class="quanxuan" name="checkbox" style="margin-left: 10px"><span style="width:80px;">全选</span>
+				<span style="width:400px;">商品</span>
+				<span style="width:80px;">单价</span>
+				<span style="width:80px;">数量</span>
+				<span style="width:80px;">获得积分</span>
+				<span style="width:80px;padding-left: 20px;">操作</span>
+			</div>
+
+			<div id="carList" style="border:1px solid #f00;height:100%">
+				
+			</div>
+			<input type="checkbox" class="fanxuan" style="margin-left: 10px">反选&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<div style="float:right;">总价：<span class="subPrice price"></span></div>
+			<a href="#" id="btnClear">清空购物车</a><button style="margin-left: 600px;width:60px;background: red;">付款</button>
+		</div>		
+	</div>
+	<div id="webFooter"></div>
+</body>
+</html>

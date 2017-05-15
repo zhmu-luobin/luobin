@@ -1,0 +1,40 @@
+@import 'commonYingtai.scss';
+
+#zhucemain{
+	background:#ccc;width:100%;padding:50px;
+	.center{
+		height:480px;background:#ccc;
+		.tupian{
+			float:left;
+		}
+		.zhuceright{
+			float:right;width: 385px;
+			.zhuceleibie{
+				height:40px;text-align:center;
+				border-bottom:2px solid white;
+				li{
+					float:left;
+					font-size:16px;width:120px;
+				}
+			}
+			.shuru{
+				width: 385px;
+				margin-top:20px;
+				li{
+					height: 60px;width: 385px;
+					input{height: 50px;width:340px;margin-left:10px;}
+					i{font-size:30px;}
+					button{width:385px;height: 50px;font-size:20px;}
+					>.zh-le{display:inline-block;float:left;font-size:18px;}
+					>.zh-re{display:inline-block;float:right;font-size:18px;}
+				}
+			}
+			.cooperate-list{
+				margin:20px auto;text-align:center;
+				a{
+					padding:5px 5px;font-size:16px;
+				}
+			}
+		}		
+	}
+}

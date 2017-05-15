@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="../css/register.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+	<script src="../lib/jquery-3.1.1.js"></script>
+	<script src="../lib/jquery-confirm/jquery-confirm.js"></script>
+	<link rel="stylesheet" href="../lib/jquery-confirm/jquery-confirm.css">
+	<script>
+		$(function(){
+			$('#webHeader').load('header.html',function(){
+				var $myYt = $('.myYt');
+				var $myLo = $('.myLo');
+				var $yinTi = $('.yinTi');
+				$('.list').hide();
+				$('.list').on('mouseleave',function(){$('.list').hide();});
+
+				$('.fenlei').on('mouseenter',function(){$('.list').show()})
+				$('.fenlei').on('mouseleave',function(){$('.list').hide()})
+				$yinTi.on('mouseenter',function(){
+						$myYt.show();
+						$yinTi.css({'backgroundColor':'white','z-index':99});
+
+				})
+				$yinTi.on('mouseleave', function(){
+						$myYt.hide();
+						$yinTi.css({backgroundColor:'#D6D6D6'});				
+				})
+
+				$('.fenlei .list').on('mouseenter','>li',function(){
+					$(this).css({backgroundColor:'#FE044C'});
+					$(this).children('span').hide();
+					$(this).children('.juti').show(500);
+					$(this).siblings().children('.juti').hide();
+				})
+
+				$('.fenlei .list').on('mouseleave','>li',function(){
+					$(this).css({backgroundColor:'#333333'});
+					$(this).children('span').show();
+					$(this).children('.juti').hide();
+				})
+
+				$('#fix-right li').on('mouseenter','>a',function(){
+					$(this).css({backgroundColor:'#FE044C'});
+					$(this).children('i').hide();
+					$(this).children('p').show();
+				})
+
+				$('#fix-right li').on('mouseleave','>a',function(){
+					$(this).css({backgroundColor:'#ccc'});
+					$(this).children('p').hide();
+					$(this).children('i').show();
+				})
+
+				$(window).scroll(function() {
+					if($(window).scrollTop() >= $('#banner').height()){
+						$('#fix-right').css({'display':'block'});
+					}else{$('#fix-right').css({'display':'none'});}
+				})
+			});
+			$('#webFooter').load('footer.html');
+			$('.zhuceleibie').on('click','li',function(){
+				console.log(666);
+				var idx = $(this).index();
+				$('.xianshi').hide();
+				if(idx === 2){$('.shuru').hide();$('.xianshi').show();
+				}else{
+					$('.shuru').show();
+					$('.lisuru').children('.usename').hide().eq(idx).show();
+				}
+
+			})
+			
+
+
+			$('.btn').click(function(){
+				console.log($('#phone').val());console.log($('#password').val());
+		        $.post('../php/login.php',{
+		          phone: $('#phone').val(),
+		          password: $('#password').val()
+		        }, function(response){
+		        	//console.log(response);
+		          var $obj = eval('(' + response + ')');
+		          if($obj.state){
+		            window.location.href = '../index.html';
+		          } else {
+		            $.alert($obj.message);
+		          }
+		        })        
+		    })
+		})
+	</script>
+</head>
+<body>
+	<div id="webHeader"></div>
+
+	<div id="zhucemain"> 
+		<div class="center">
+	        <div class="tupian">              
+				<img  src="../images/logon.jpg"/>
+	        </div>
+
+	        <div class="zhuceright">
+				<ul class="zhuceleibie">
+					<li style="border-right: 1px solid white;">银泰护照</li>
+					<li style="border-right: 1px solid white;">银泰网账号</li>
+					<li>APP扫码登陆</li>
+				</ul>
+				
+				<ul class="shuru">
+					<li class="lisuru"><i class="iconfont icon-yonghu"></i>
+						<input type="text" placeholder="请输入银泰账号" class="phone" id="phone">
+						<input type="text" placeholder="请输入手机号" style="display: none" class="phone" id="phone">
+					</li>
+					<li><i class="iconfont icon-mima"></i><input type="password" placeholder="请输入密码" id="password"></li>
+					<li><button class="btn">登&nbsp; &nbsp;&nbsp;陆</button></li>
+					<li><span class="zh-le">忘记密码?</span><a style="color:red" class="zh-re">注册</a></li>																
+				</ul>
+				
+				<div style="display:none; text-align: center;" class="xianshi"><img src="../images/qrcode.jpg" alt="" style="width: 300px;height:300px"></div>
+
+
+	        	<div class="cooperate-third">    
+		            <h3 class="cooperate-title">------------您可以使用合作网站账号登录------------</h3>
+		        </div>
+		        <div class="cooperate-list">
+		            <a href="" target="_blank" class="tencent-ico">QQ</a> | 
+		            <a href="" target="_blank" class="alipay-ico">支付宝</a> |
+		            <a href="" target="_blank" class="sina-ico">微博</a> 
+		        </div>
+	    </div>
+   	</div> 
+	<div id="webFooter"></div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/*公共部分*/
+/*头部,首页的所有头部内容(一级导航和二级导航以及菜单栏)*/
+/*尾部,页尾的所有尾部内容(服务详情 链接导航 正品说明 网站声明 法律安全)*/
+body { font-size: 14px; }
+
+a { text-decoration: none; }
+
+a:hover { text-decoration: underline; color: red; }
+
+ul li { list-style: none; }
+
+.center { width: 1190px; margin: 0 auto; }
+
+* { padding: 0; margin: 0 auto; box-sizing: border-box; }
+
+#banner { width: 100%; height: 470px; position: relative; z-index: 9; }
+
+#banner > .imgList > li { width: 100%; height: 470px; position: absolute; left: 0; top: 0; }
+
+#banner > .imgList > li a { display: block; overflow: hidden; }
+
+#banner > .imgList > li a img { width: 100%; height: 470px; }
+
+#banner > .btn { position: absolute; top: 50%; margin-top: -30px; width: 30px; height: 60px; line-height: 60px; background: rgba(0, 0, 0, 0.5); font-size: 40px; color: #fff; text-align: center; display: none; }
+
+#banner .left { left: 320px; }
+
+#banner .right { right: 200px; }
+
+#banner > .indexList { position: absolute; left: 50%; bottom: 5px; z-index: 30; }
+
+#banner > .indexList li { float: left; margin-right: 5px; padding: 2px 4px; border: 2px solid black; background: grey; cursor: pointer; }
+
+#banner > .indexList .indexOn { background: red; font-weight: bold; color: white; }
+
+#banner:hover .btn { display: block; cursor: pointer; }
+
+#container .center { height: 100%; }
+
+#container .center > h1 { margin: 15px; }
+
+#container .center > h1 span:last-child { opacity: 0.6; }
+
+#container .center > .box1 { padding-top: 20px; height: 335px; overflow: hidden; }
+
+#container .center > .box1 > .box1-R { float: right; width: 270px; }
+
+#container .center > .box1 > .box1-L { float: left; width: 910px; }
+
+#container .center > .box1 > .box1-L > .box1-1 { height: 40px; line-height: 40px; text-align: center; }
+
+#container .center > .box1 > .box1-L > .box1-1 > div { float: left; border-bottom: 3px solid #ccc; }
+
+#container .center > .box1 > .box1-L > .box1-1 > div > a { padding: 0 107px; font-size: 20px; }
+
+#container .center > .box1 > .box1-L > .box1-2 { position: relative; margin-top: 5px; }
+
+#container .center > .box1 > .box1-L > .box1-2 > div { position: absolute; left: 0; top: 0; }
+
+#container .center > .box1 > .box1-L > .box1-2 > div a { height: 260px; display: inline-block; margin-right: 5px; border: 1px solid #ccc; }
+
+#container .center > .box1 > .box1-L > .box1-2 > div a img { width: 210px; height: 250px; }
+
+#container .center > .box3 { margin-top: 30px; }
+
+#container .center > .box3 > .box3-1 { height: 46px; border-bottom: 1px solid #ccc; }
+
+#container .center > .box3 > .box3-1 > span { font-size: 30px; width: 120px; }
+
+#container .center > .box3 > .box3-2 { margin-top: 10px; overflow: hidden; }
+
+#container .center > .box3 > .box3-2 > .box3-left { width: 340px; height: 555px; float: left; }
+
+#container .center > .box3 > .box3-2 > .box3-right { height: 555px; width: 840px; float: right; position: relative; z-index: 10; overflow: hidden; }
+
+#container .center > .box3 > .box3-2 > .box3-right > .box3-r1 { height: 36px; border-bottom: 2px solid #f0f0f0; }
+
+#container .center > .box3 > .box3-2 > .box3-right > .box3-r1 > span { font-size: 16px; line-height: 36px; width: 150px; padding: 0 30px; }
+
+#container .center > .box3 > .box3-2 > .box3-right > .box3-r11 { overflow: hidden; height: 555px; }
+
+#container .center > .box3 > .box3-2 > .box3-right > .box3-r11 > .box3-r2 { position: absolute; left: 0; top: 40px; margin-top: 10px; }
+
+#container .center > .box3 > .box3-2 > .box3-right > .box3-r11 > .box3-r3 { position: absolute; left: 0; top: 40px; display: none; }
+
+#container .center > .box3 > .box3-2 > .box3-right > .box3-r11 > .box3-r3 a { width: 220px; height: 250px; display: inline-block; text-align: center; border: 1px solid #ccc; margin: 4px 20px; }
+
+#container .center > .box4 { margin-top: 20px; height: 380px; }
+
+#container .center > .box4 > .box_left { border: 1px solid #ccc; float: left; height: 370px; width: 230px; }
+
+#container .center > .box4 > .box_left > ul { overflow: hidden; }
+
+#container .center > .box4 > .box_left > ul > li { float: left; }
+
+#container .center > .box4 > .box_left > ul > li:hover { background: #FF4B7E; }
+
+#container .center > .box4 > .box_left > ul > li:hover a { color: white; }
+
+#container .center > .box4 > .box_left > .box_left_top { height: 188px; padding: 16px 0 0 3px; border-bottom: 1px dotted #ccc; }
+
+#container .center > .box4 > .box_left > .box_left_top > li { border: 1px solid #ccc; margin: 3px; width: 67px; height: 34px; text-align: center; }
+
+#container .center > .box4 > .box_left > .box_left_top > li > a { font-size: 14px; line-height: 34px; }
+
+#container .center > .box4 > .box_left > .box_left_bottom { width: 200px; height: 125px; margin: 20px auto; border: 1px solid #ccc; position: relative; overflow: hidden; }
+
+#container .center > .box4 > .box_left > .box_left_bottom > ul { position: absolute; top: 0; left: 0; overflow: hidden; }
+
+#container .center > .box4 > .box_left > .box_left_bottom > ul li { float: left; }
+
+#container .center > .box4 > .box_left > .box_left_bottom > ul li > a { padding-top: 5px; }
+
+#container .center > .box4 > .box_left > .box_left_bottom > ul li > a img { display: block; }
+
+#container .center > .box4 > .box_mid { position: relative; width: 390px; height: 370px; overflow: hidden; float: left; margin-left: 5px; }
+
+#container .center > .box4 > .box_mid > ul { position: absolute; top: 0; left: 0; overflow: hidden; }
+
+#container .center > .box4 > .box_mid > ul > li { float: left; }
+
+#container .center > .box4 > .box_mid > ul > li img { display: block; }
+
+#container .center > .box4 > .box_right { width: 560px; height: 380px; margin: 0 auto; float: right; }
+
+#container .center > .box4 > .box_right > .spbq { width: 270px; height: 180px; float: left; margin: 5px; position: relative; overflow: hidden; }
+
+#container .center > .box4 > .box_right > .spbq > .biankuang { width: 3px; height: 3px; position: absolute; z-index: 99; border-radius: 10px; }
+
+#container .center > .box4 > .box_right > .spbq > .biankuang_1 { height: 0px; top: 0px; left: 0px; border-left: 3px solid #EB5858; }
+
+#container .center > .box4 > .box_right > .spbq > .biankuang_2 { width: 0px; bottom: 0px; left: 0px; border-top: 3px solid #EB5858; }
+
+#container .center > .box4 > .box_right > .spbq > .biankuang_3 { height: 0px; bottom: 0px; right: 0px; border-right: 3px solid #EB5858; }
+
+#container .center > .box4 > .box_right > .spbq > .biankuang_4 { width: 0px; top: 0px; right: 0px; border-bottom: 3px solid #EB5858; }

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/*公共部分*/
+/*头部,首页的所有头部内容(一级导航和二级导航以及菜单栏)*/
+/*尾部,页尾的所有尾部内容(服务详情 链接导航 正品说明 网站声明 法律安全)*/
+body { font-size: 14px; }
+
+a { text-decoration: none; }
+
+a:hover { text-decoration: underline; color: red; }
+
+ul li { list-style: none; }
+
+.center { width: 1190px; margin: 0 auto; }
+
+* { padding: 0; margin: 0 auto; box-sizing: border-box; }
+
+#header { height: 275px; width: 100%; }
+
+#header #hdtop { background-color: #D6D6D6; height: 35px; line-height: 35px; width: 100%; z-index: 100; }
+
+#header #hdtop .tp_left { float: left; overflow: hidden; width: 300px; height: 35px; margin: 0; }
+
+#header #hdtop .tp_left > li { float: left; margin: 0 5px; }
+
+#header #hdtop .tp_left > .separator { float: left; width: 0; height: 14px; line-height: 14px; position: relative; top: 10px; left: 0; font-size: 0; overflow: hidden; border-left: 1px solid white; }
+
+#header #hdtop .tp_right { float: right; height: 35px; margin: 0; }
+
+#header #hdtop .tp_right > li { float: left; margin: 0 5px; }
+
+#header #hdtop .tp_right > .yinTi > div { margin: 0; height: 35px; }
+
+#header #hdtop .tp_right > .yinTi > ul > li { height: 30px; border-bottom: 2px solid #ccc; margin: 0; text-align: center; z-index: 99; }
+
+#header #hdtop .tp_right > .separator { float: left; width: 0; height: 14px; line-height: 14px; position: relative; top: 10px; left: 0; font-size: 0; overflow: hidden; border-left: 1px solid white; }
+
+#header #top-banner { width: 100%; min-height: 80px; z-index: -1; }
+
+#header #top-banner a { background: url(../images/jltu1.fw.png) -300px 0 no-repeat; height: 80px; width: 100%; display: block; }
+
+#header #hdmain { padding-top: 10px; height: 110px; z-index: -1; }
+
+#header #hdmain .logo1 { height: 110px; float: left; }
+
+#header #hdmain .logo1 > a { background: url(../images/jltu1.fw.png) 0 -100px no-repeat; display: block; height: 80px; width: 220px; }
+
+#header #hdmain .logo2 { height: 110px; float: left; margin-left: 10px; width: 130px; }
+
+#header #hdmain .logo2 > a { background: url(../images/hdmain.gif) no-repeat; display: block; height: 80px; width: 120px; padding-left: 10px; border-left: 1px solid #ccc; }
+
+#header #hdmain .search { float: left; height: 110px; margin-left: 150px; width: 500px; }
+
+#header #hdmain .search li { padding-top: 10px; height: 40px; }
+
+#header #hdmain .search li input { height: 35px; width: 450px; display: block; float: left; }
+
+#header #hdmain .shopCar { float: right; height: 40px; margin-top: 10px; width: 160px; background-color: #ccc; }
+
+#header #hdmain .shopCar span { height: 40px; font-size: 16px; line-height: 40px; margin: 0 10px; }
+
+#header #hdmenu { height: 39px; line-height: 39px; z-index: 100; }
+
+#header #hdmenu .menu_left { float: left; margin: 0; }
+
+#header #hdmenu .menu_left > li { float: left; margin: 0 20px; }
+
+#header #hdmenu .menu_left > li a { font-size: 16px; }
+
+#header #hdmenu .menu_left > .fenlei { text-align: center; height: 39px; }
+
+#header #hdmenu .menu_left > .fenlei > .list { height: 470px; z-index: 99; position: relative; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li { height: 46px; font-size: 18px; color: white; background: #333333; position: relative; border-bottom: 1px solid #ccc; width: 212px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > a { font-size: 14px; color: white; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > span { display: block; float: right; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti { z-index: 9; position: absolute; left: 212px; top: 0px; background: #333333; display: none; width: 420px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL { float: left; padding-left: 15px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL > li { height: 50px; margin: 3px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL > li a:hover { color: red; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL > li a { color: white; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL > li > p { height: 20px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL > li > p a { font-size: 16px; margin-left: 10px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL > li > .jpl { height: 30px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinL > li > .jpl a { font-size: 14px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinR { float: right; margin: 10px; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinR a:hover { color: red; }
+
+#header #hdmenu .menu_left > .fenlei > .list > li > .juti > .jingpinR a { color: white; font-size: 14px; padding: 0 10px; }
+
+#header #hdmenu .menu_left > .fenlei > .feilei1 { background: #222222; width: 212px; font-size: 18px; color: white; }
+
+#header #hdmenu .menu_right { float: right; margin: 0; }
+
+#header #hdmenu .menu_right li { float: left; margin: 0 20px; }
+
+#footer { height: 290px; padding-top: 30px; }
+
+#footer .foot-top { height: 100px; }
+
+#footer .foot-top > span { display: inline-block; width: 260px; background: #ccc; height: 80px; margin-top: 0; }
+
+#footer .foot-top > span > strong { color: red; font-size: 18px; }
+
+#footer .foot-links { height: 30px; }
+
+#footer .foot-links > a { padding: 20px 5px; }
+
+#footer .foot-copyright { height: 44px; }
+
+#footer .foot-copyright > p { margin: 10px; }
+
+#footer .foot-copyright > p a { padding: 0 5px; }
+
+#footer .foot-mark { margin: 20px auto; overflow: hidden; text-align: center; }
+
+#footer .foot-mark a { overflow: hidden; margin: 0 10px; }
+
+#footer .foot-mark a img { display: inline-block; height: 40px; }
+
+#fix-right { position: fixed; right: 0; bottom: 0px; z-index: 9999; }
+
+#fix-right > li { text-align: center; line-height: 50px; width: 50px; height: 50px; margin: 2px; border: 1px solid #ccc; }
+
+#fix-right > li > a { width: 50px; height: 50px; display: block; background: #ccc; overflow: hidden; }
+
+#fix-right > li > a > p { color: white; display: none; font-size: 14px; height: 50px; line-height: 25px; }
+
+#fix-right > li > a > i { font-size: 30px; }
+
+#carmid .center { width: 980px; margin: 0 auto; }
+
+#carmid .center #carList li { position: relative; padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #ddd; }
+
+#carmid .center #carList img { display: block; width: 100px; }
+
+#carmid .center #carList li .btn-close { position: absolute; top: 0; right: 0; padding: 0 5px; cursor: default; }
+
+#carmid .center #carList li .btn-close:hover { background-color: #f00; color: #fff; }
+
+#carmid .center .subPrice { padding: 5px 20px; color: #f00; font-weight: bold; text-align: right; }
+
+#carmid .center #carList .price { color: #f00; }
+
+#carmid .center .price::before { content: '￥'; font-size: 11px; }
+
+#carmid .center #carList .price span { font-size: 11px; }
+
+#carmid .center .car-top span { display: inline-block; margin: 10px 10px; }

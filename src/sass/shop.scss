@@ -1,0 +1,48 @@
+@import 'commonYingtai.scss';
+
+#datalist{
+	.center{ 
+		ul{ overflow:hidden;
+				>.spbq{
+					width:230px;height:450px;
+					float: left;margin:3px;
+					position: relative;
+					overflow: hidden;
+					>.biankuang{
+						width: 2px;
+						height: 2px;
+						position: absolute;
+						z-index: 99;
+						border-radius:10px;
+					}
+					>.biankuang_1{
+						height: 0px;
+						top: 0px;
+						left:0px;
+						border-left: 1px solid #EB5858;
+					}
+					>.biankuang_2 {
+						width: 0px;
+						bottom:0px;
+						left: 0px;
+						border-top: 1px solid #EB5858;
+					}
+					>.biankuang_3{
+						height: 0px;
+						bottom:0px;
+						right:0px;
+						border-right: 1px solid #EB5858;
+					}
+					>.biankuang_4{
+						width:0px;
+						top:0px;
+						right:0px;
+						border-bottom: 1px solid #EB5858;
+					}
+					a{	width:230px;height: 450px;
+						img{width: 230px;height: 450px}
+					}
+				}			
+		}
+	}
+}

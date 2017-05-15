@@ -1,0 +1,40 @@
+@import 'commonYingtai.scss';
+
+#logoner{
+	width:100%;padding:50px;
+	.center{
+		height:480px;
+		.tupian{
+			float:left;
+		}
+		.yaozhude{
+			float:right;width: 385px;height:480px;
+			h4{text-align:center;height: 40px;line-height: 40px;
+				border-bottom:2px solid #ccc;font-size:18px;
+			}
+			.axbi{
+				margin-top:10px;overflow:hidden;background: #ccc;height: 40px;
+				span{display:inline-block;float:right;line-height: 40px;font-size:16px;}
+			}
+			.yznr{
+				margin-top:10px;
+				li{	position:relative;
+					height: 44px;border-bottom:1px solid #ccc;
+					input{height: 40px;border:0;width:385px;}
+					button{position: absolute;right:0;top:4px;height: 35px;}
+					.poss{position: absolute;right:80px;top:4px;line-height: 35px;text-align:center;}
+				}
+			}
+			.neironga{
+				background: #ccc;padding-top:5px;height: 185px;
+				p{
+					line-height: 20px;margin-top:3px;
+				}
+				div{
+					text-align:center;margin-top:10px;
+					button{height: 40px;width:220px;border-radius:10px;font-size:16px;}
+				}
+			}
+		}
+	}
+}

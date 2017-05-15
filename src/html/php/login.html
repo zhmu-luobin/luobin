@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Login</title>
+	
+  <link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../libs/jquery-confirm/jquery-confirm.css">
+
+  <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../libs/jquery-confirm/jquery-confirm.js"></script>  
+
+	<style type="text/css" media="screen">
+		.bs-example{width: 45%; margin: 20px auto;}
+	</style>
+</head>
+<body style="background:#ccc;">
+<div class="header" style="background:#ccc;height: 200px;">
+    <img src="../css/img/c2.png" alt="" style="float: left;margin-top: 70px;">
+        <div class="loginTopR mt30" style="float: right;line-height: 200px;">
+            您好，欢迎您来到华润e万家！<span>|</span><a href="#">帮助中心</a>
+        </div>
+  </div>
+  <div style="height: 45px;line-height: 45px;padding: 0 30px;background: #fff;width: 1190px;margin: 0 auto;border-bottom: 2px solid #ccc;">
+      <h1 style="float:left;font-size: 16px;color: #333;">用户登录</h1>
+      <a href="register.html" style="float: right;color: #e04040;">用户注册</a>
+  </div>
+  <div style="width: 1190px;margin: 0 auto;background:#fff;height: 500px;margin-top: -15px;">
+    <img src="../img/f4.jpg" alt="" style="margin-top: 20x;">
+    <div class="bs-example" style="padding-top: 50px;float:right;">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" name="email" placeholder="邮箱">
+          </div>
+        </div>      
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" name="password" placeholder="密码">
+          </div密码</div>    
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" id="btn" class="btn btn-default">登录</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+	
+
+  <script type="text/javascript">
+    $(function(){
+      $('#btn').click(function(){
+        $.post('login.php',{
+          email: $('#email').val(),
+          password: $('#password').val()
+        }, function(response){
+          var $obj = eval('(' + response + ')');
+          if($obj.state){
+            top.location.href='../index.html'
+          } else {
+            $.alert($obj.message);
+          }
+        })        
+      })
+    })
+  </script>  	
+</body>
+</html>

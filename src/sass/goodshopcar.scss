@@ -1,0 +1,22 @@
+@import 'commonYingtai.scss';
+
+#carmid{
+	.center{
+		width:980px;margin:0 auto;
+		#carList li{position:relative;padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #ddd;}
+		#carList img{display:block;width:100px;}
+		#carList li .btn-close{position:absolute;top:0;right:0;padding:0 5px;cursor:default;}
+		#carList li .btn-close:hover{background-color:#f00;color:#fff;}
+		.subPrice{padding:5px 20px;color:#f00;font-weight:bold;text-align:right;}
+		#carList .price{color:#f00;}
+		.price::before{
+			content:'￥';
+			font-size:11px;
+		}
+		#carList .price span{font-size:11px;}
+		.car-top{
+				span{display:inline-block;margin:10px 10px;}
+			
+		}
+	}
+}

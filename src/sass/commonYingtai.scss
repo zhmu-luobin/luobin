@@ -1,0 +1,176 @@
+@import 'common';
+
+#header{
+	height: 275px;width:100%;
+	
+	#hdtop{
+		background-color:#D6D6D6;height: 35px;line-height: 35px;width:100%;z-index: 100;
+		
+		.tp_left{
+			float: left;overflow:hidden;width: 300px;height: 35px;margin:0;
+			>li{
+				float: left;margin:0 5px;
+			}
+			>.separator{
+				float: left;width: 0;height: 14px;line-height: 14px;position: relative;
+				top: 10px;left: 0;font-size: 0;overflow: hidden;border-left: 1px solid white;
+			}
+		}
+		.tp_right{
+			float: right;height: 35px;margin:0;
+			>li{
+				float: left;margin:0 5px;
+			}
+			>.yinTi{
+    			
+				>div{margin:0;height: 35px;}
+				>ul{
+					>li{height: 30px;border-bottom:2px solid #ccc;margin: 0;text-align: center;z-index:99;}
+				}
+			}
+			>.separator{
+				float: left;width: 0;height: 14px;line-height: 14px;position: relative;
+				top: 10px;left: 0;font-size: 0;overflow: hidden;border-left: 1px solid white;
+			}
+		}
+	}
+
+	#top-banner{
+		width: 100%;min-height: 80px;z-index:-1;
+		a{
+			background: url(../images/jltu1.fw.png) -300px 0 no-repeat;
+			height: 80px;width: 100%;display: block;
+		}
+	}
+
+	#hdmain{
+		padding-top: 10px;height: 110px;z-index: -1;
+		.logo1{
+			height: 110px;float:left;
+			>a{background: url(../images/jltu1.fw.png) 0 -100px no-repeat;
+				display: block;height: 80px;width:220px;}
+		}
+		.logo2{
+			height: 110px;float:left;margin-left:10px;width:130px;
+			>a{background: url(../images/hdmain.gif) no-repeat;display: block;height: 80px;
+				width:120px;padding-left: 10px;border-left:1px solid #ccc;}	
+		}
+
+		.search{
+			float:left;height: 110px;margin-left:150px;width:500px;
+			li{
+				padding-top:10px;height: 40px;
+				input{height: 35px;width:450px;display:block;float: left;}
+			}
+			
+		}
+		.shopCar{
+			float:right;height: 40px;margin-top:10px;width:160px;
+			background-color:#ccc;
+			span{height: 40px;font-size:16px;line-height: 40px;margin:0 10px;}
+		}
+	}
+
+	#hdmenu{
+		height: 39px;line-height: 39px;z-index:100;
+		.menu_left{
+			float: left;margin:0;
+			>li{float: left;margin:0 20px;a{font-size:16px;}}
+			>.fenlei{
+				text-align: center;height: 39px;
+				>.list{
+					height: 470px;z-index: 99;position: relative;
+					>li{
+						height: 46px;
+						font-size:18px;color:white;background:#333333;
+						position: relative;
+						border-bottom:1px solid #ccc;width:212px;
+						>a{font-size:14px;color:white;}
+						>span{display:block;float:right;}
+						>.juti{z-index: 9;
+							position: absolute;left: 212px;top:0px;background:#333333;display:none;width:420px;
+							>.jingpinL{
+								float:left;padding-left:15px;
+								>li{
+									height: 50px;margin:3px;
+									a:hover{color:red;}
+									a{
+										color:white;	
+									}
+									>p{height: 20px;a{font-size:16px;margin-left:10px;}}
+									>.jpl{
+										height: 30px;
+										a{font-size:14px;}
+									}
+								}
+							}
+							>.jingpinR{
+								float:right;margin:10px;
+								a:hover{color:red;}
+								a{color:white;font-size:14px;padding:0 10px;}
+											
+									
+							}
+						}
+					}
+				}
+				>.feilei1{
+					background:#222222;width:212px;
+					font-size:18px;color:white;
+				}			
+			}
+		}
+		.menu_right{
+			float: right;margin:0;
+			li{float: left;margin:0 20px;}
+		}
+	}
+}
+
+#footer{
+	height: 290px;padding-top:30px;
+
+	.foot-top{
+		height: 100px;
+		>span{
+			display:inline-block;width:260px;background:#ccc;height: 80px;margin-top:0;
+			>strong{color:red;font-size: 18px;}
+		}
+	}
+	
+	.foot-links{
+		height: 30px;
+		>a{padding:20px 5px;}
+	}
+
+	.foot-copyright{
+		height: 44px;
+		>p{
+			margin:10px;
+			a{
+				padding:0 5px;
+			}
+		}
+
+	}
+
+	.foot-mark{
+		margin:20px auto;overflow:hidden;text-align: center;
+		a{	
+			overflow:hidden;margin: 0 10px;
+			img{display: inline-block;height: 40px;}
+		}	
+	}
+}
+
+#fix-right{
+	position: fixed;right:0;bottom:0px;z-index:9999;
+	>li{
+		text-align:center;line-height: 50px;
+		width: 50px;height: 50px;margin:2px;border:1px solid #ccc;
+		>a{	width: 50px;height: 50px;display:block;background:#ccc;overflow: hidden;
+			>p{color:white;display:none;font-size:14px;height: 50px;line-height: 25px;}
+			>i{font-size:30px;}
+		}
+	}
+}

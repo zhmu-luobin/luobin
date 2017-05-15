@@ -1,0 +1,12 @@
+/*公共部分*/
+
+/*头部,首页的所有头部内容(一级导航和二级导航以及菜单栏)*/
+/*尾部,页尾的所有尾部内容(服务详情 链接导航 正品说明 网站声明 法律安全)*/
+
+
+body{font-size:14px;}
+a{text-decoration: none;}
+a:hover{text-decoration:underline;color:red;}
+ul li{list-style: none;}
+.center{width:1190px;margin: 0 auto;}
+*{padding: 0;margin: 0 auto;box-sizing:border-box;}
